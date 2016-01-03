@@ -1,0 +1,105 @@
+==========THE UNDEBUGGABLES===============
+==============DEBUG LOG===================
+
+Checkpoint 1
+1) Date: 10/15/2015
+   Problem: i8259 works incorrectly
+   Soultion: change the some numbers of basic properties of i8259
+   Time to fix:  1 day
+2) Date: 10/16/2015
+   Problem: Booting system causes Triple Fault
+   Solution:  set cr3 value after everything is done instaed somewhere before
+   Time to fix: 2 hours
+
+Checkpoint 2
+1) Date: 10/30/2015
+   Problem: File system cannot read big file
+   Solution: Did not update the file block index once finish reading a data block
+   Time to fix: 2 hours
+2) Date: 10/28/2015
+   Problem: Capslock not working
+   Solution: set port number correct
+   Time to fix: 1 hour
+3) Date: 10/28/2015
+   Problem: Shift key will result in priting two more character on the console
+   Solution: need to lower the flag
+   Time to fix: half hour
+4) Date: 10/27/2015
+   Problem: The left up pixel on the screen does not show up.
+   Solution: Redraw the terminal use terminal write.
+   Time to fix: 1.5 hour
+5) Date: 11/2/2015
+   Problem: Keyboard Buffer does not clean up everytime the enter is pressed
+   Solution: Clean up the keyboard buffer
+   Time to fix: half hour
+
+Checkpoint 3
+1) Date: 11/12/2015
+   Problem: Halt Triple Fault
+   Solution: wrong thing is pushed on the stack
+   Time to fix: 4 hours
+2) Date: 11/14/2015
+   Problem:  LS output strange stuffs
+   Solution: need to update the file position properly
+   Time to fix: 2hours
+3) Date: 11/14/2015
+   Problem: Fixed exiting last shell
+   Solution: 
+   Time to fix:  1 hour
+4) Date: 11/14/2015
+   Problem: Run syserr 3 twice and page fault
+   Solution: should set terminal read/write priviledge
+   Time to fix: 3 hours
+5) Date: 11/14/2015
+   Problem: cannot open more than 6 ls
+   Solution: clean up the pcb everytime the program halts
+   Time to fix: 3 hours
+6) Date: 11/14/2015
+   Problem: exit last shell many times cause other process cannot open
+   Solution: fixed by adding an end process for last shell situation.
+   Time to fix: 2 hours
+7) Date: 11/14/2015
+   Problem: pass arg into pcb may result page fault
+   Solution: size of pcb argument is 100 while the buffer require 1024
+   Time to fix: 2 hours
+
+Checkpoint 4
+1) Date: 11/18/2015
+   Problem: the program fish could not run in the terminal
+   Solution: change the page table to user mode instead of supervior mode
+   Time to fix: 2 hours
+2) Date: 11/20/2015 
+   Problem: Pingpong runs too fast
+   Solution: fix rtc by writing proper bit into ports
+   Time to fix: 1 hour
+3) Date: 11/21/2015
+   Problem: cat only prints several bytes for executable file
+   Solution: fixed in terminal write
+   Time to fix: 1 hour
+
+   
+Checkpoint 5
+1) Date: 12/6/2015
+   Problem: runs multiple pingpong the speed of pingpong is weird
+   Solution: change the flag previous only can be 0 or 1 to be the number of running terminals
+   Time to fix: half an hour
+2) Date: 12/4/2015
+   Problem:  terminal 2 and 3 halt will cause page fault
+   Solution:  the scheduler does not handle this properly. 
+   Time to fix: three hours
+3) Date: 12/3/2015
+   Problem:  the if ternimal 1 runs a program, open terminal 2 or 3 will cause triple fault
+   Solution: the next program to run should have already push its stuffs on the stack otherwise it will fails
+   Time to fix: four hours
+4) Date: 12/5/2015
+   Problem:  fish program will cause page fault
+   Solution: need to set the mermoy privillege correctly
+   Time to fix: five hours
+5) Date: 12/1/2015
+   Problem: pingpong prints to the same terminal
+   Solution: the video page mapping is not correct
+   Time to fix: five hours
+6) Date: 11/30/2015
+   Problem: anything does not show up on the screen when enabling multiple terminal
+   Solution: the video page is messed up
+   Time to fix: 1 hour

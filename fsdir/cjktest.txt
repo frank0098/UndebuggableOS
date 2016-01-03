@@ -1,0 +1,5 @@
+English test
+Simplified Chinese test 简体中文 测试
+Traditional Chinese test 繁體中文 測試
+Japanese test 日本語 テスト
+Korean is not supported by GBK character set.
